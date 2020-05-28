@@ -5,9 +5,13 @@
       <meta charset="utf-8">
       <script async src="https://cdn.ampproject.org/v0.js"></script>
       <title>AMP News Xample</title>
-      <link rel="shortcut icon" href="https://cdn.iconscout.com/icon/premium/png-256-thumb/spiderman-5-520228.png">
+      <link rel="shortcut icon"
+            href="https://www.lineadirectaportal.com/wp-content/themes/ld_portal/favicon/favicon-32x32.png">
       <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-      <link rel="canonical" href="https://hungry-modem.glitch.me/">
+      <link rel="canonical" href="https://www.lineadirectaportal.com/">
+      <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
+      <script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"></script>
+      <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
       <style amp-boilerplate>
             body {
                   -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
@@ -87,6 +91,7 @@
 
             p,
             h1 {
+                  font-family: 'Roboto', sans-serif;
                   padding: 0 25px;
             }
       </style>
@@ -118,46 +123,20 @@
       </script>
       </amp-analytics> -->
 
-      <amp-img src="https://cronicaglobal.elespanol.com/uploads/s1/61/11/50/7/main-700b9bff30.jpeg" layout="responsive"
-            width="640" height="480"></amp-img>
+      <amp-list width="auto" single-item items="." height="25" layout="fixed-height"
+            src="https://lineadirectaportal.com/wp-json/wp/v2/posts/1031687">
+            <template type="amp-mustache">
+                  <amp-img src="{{better_featured_image.media_details.sizes.medium.source_url}}" layout="responsive"
+                        width="640" height="480"></amp-img>
+                  <h1>
+                        {{title.rendered}}
+                  </h1>
 
-      <h1>Spiderman</h1>
-
-      <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, ex mollitia impedit quasi dolor minus
-            quos voluptatem harum vel soluta quia odit doloremque ipsam quibusdam cupiditate laudantium officiis
-            accusamus quis.
-      </p>
-      <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, ex mollitia impedit quasi dolor minus
-            quos voluptatem harum vel soluta quia odit doloremque ipsam quibusdam cupiditate laudantium officiis
-            accusamus quis.
-      </p>
-      <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, ex mollitia impedit quasi dolor minus
-            quos voluptatem harum vel soluta quia odit doloremque ipsam quibusdam cupiditate laudantium officiis
-            accusamus quis.
-      </p>
-      <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, ex mollitia impedit quasi dolor minus
-            quos voluptatem harum vel soluta quia odit doloremque ipsam quibusdam cupiditate laudantium officiis
-            accusamus quis.
-      </p>
-      <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, ex mollitia impedit quasi dolor minus
-            quos voluptatem harum vel soluta quia odit doloremque ipsam quibusdam cupiditate laudantium officiis
-            accusamus quis.
-      </p>
-      <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, ex mollitia impedit quasi dolor minus
-            quos voluptatem harum vel soluta quia odit doloremque ipsam quibusdam cupiditate laudantium officiis
-            accusamus quis.
-      </p>
-      <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, ex mollitia impedit quasi dolor minus
-            quos voluptatem harum vel soluta quia odit doloremque ipsam quibusdam cupiditate laudantium officiis
-            accusamus quis.
-      </p>
+                  <p>
+                        {{{content.rendered}}}
+                  </p>
+            </template>
+      </amp-list>
 
 </body>
 
