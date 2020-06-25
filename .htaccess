@@ -1,0 +1,2 @@
+Options All -Indexes
+ErrorDocument 404 /amp-news-xample/404.html
