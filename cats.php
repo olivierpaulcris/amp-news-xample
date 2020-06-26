@@ -4,7 +4,7 @@
 <head>
       <meta charset="utf-8">
       <script async src="https://cdn.ampproject.org/v0.js"></script>
-      <title>AMP News Xample</title>
+      <title>AMP - Línea Directa</title>
       <link rel="shortcut icon" href="https://lineadirectaportal.com/wp-content/themes/LDPortal_V1p5/favicon/favicon-32x32.png">
       <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
       <link rel="canonical" href="https://www.lineadirectaportal.com/">
@@ -13,6 +13,8 @@
       <script async custom-element="amp-timeago" src="https://cdn.ampproject.org/v0/amp-timeago-0.1.js"></script>
       <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
       <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
+      <script custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js" async=""></script>
+      <script custom-element="amp-accordion" src="https://cdn.ampproject.org/v0/amp-accordion-0.1.js" async=""></script>
       
       <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
 
@@ -72,61 +74,66 @@
             </div>
             <amp-img src="https://lineadirectaportal.com/wp-content/themes/LDPortal_V1p5/img/logo.svg" width="100" height="61.3" layout="fixed" class="my0 mx-auto " alt="The Blog"></amp-img>
       </header>
+
+      <amp-sidebar id="header-sidebar" class="ampstart-sidebar px3  " layout="nodisplay">
+
+            <div class="flex justify-start items-center ampstart-sidebar-header">
+                  <div role="button" aria-label="close sidebar" on="tap:header-sidebar.toggle" tabindex="0" class="ampstart-navbar-trigger items-start">✕</div>
+            </div>
+
+            <nav class="ampstart-sidebar-nav ampstart-nav">
+                  <ul class="list-reset m0 p0 pt4 ampstart-label">
+                  
+                        <li class="ampstart-nav-item ">
+                              <a class="ampstart-nav-link" href="index.php">Inicio</a>
+                        </li>
+                        <li class="ampstart-nav-item ">
+                              <a class="ampstart-nav-link" href="cats.php?id=8">Deportes</a>
+                        </li>
+                        <li class="ampstart-nav-item ">
+                              <a class="ampstart-nav-link" href="cats.php">Policiaca</a>
+                        </li>
+                        <li class="ampstart-nav-item ">
+                              <a class="ampstart-nav-link" href="cats.php">Sinaloa</a>
+                        </li>
+                        <li class="ampstart-nav-item ">
+                              <a class="ampstart-nav-link" href="cats.php">Opinión</a>
+                        </li>
+                        <li class="ampstart-nav-item ">
+                              <a class="ampstart-nav-link" href="cats.php">Agropecuaria</a>
+                        </li>
+
+                  </ul>
+            </nav>
+
+      </amp-sidebar>
+
+      
+      <?php 
+            if($_GET['id']) {
+                  $var_id = $_GET['id']; 
+            }
+      ?>
       
       <main id="content" role="main" class="">
                   <div class="clearfix py2 my2 px3">
 
-                        <h1 class="mb1 pt2 h3" style="color: #616161;">
-                              ⚡ Lo Último
-                        </h1>
-                        
-                        <amp-list width="auto" single-item items="." height="500" class="mt3 mb3" layout="fixed-height"
-                        src="https://lineadirectaportal.com/wp-json/wp/v2/posts/?orderBy=date&order=desc&page=1&per_page=1">
-                              <template type="amp-mustache">
-                                    <!-- <a href="./single.php?id={{id}}">
-                                          <amp-img src="" width="450" height="400" layout="responsive" alt="{{{title.rendered}}}" class="rounded mb4"></amp-img>
-                                    </a> -->
-                                    <div class="rounded" style="border: 0;background-image:
-    linear-gradient(to bottom, transparent, black),
-    url('{{better_featured_image.media_details.sizes.medium.source_url}}');background-repeat: no-repeat;background-size: cover;height:500px;padding: 300px 30px 30px 30px;">
-                                          <p class="caps" style="color: #FF550D; font-size: 12px;text-shadow: 1px 1px 2px #000;">Sinaloa</p>
-
-                                          <h1 class="mb1 h2" style="color: #fff;text-shadow: 2px 2px 2px #000;">
-                                                <a href="./single.php?id={{id}}" class="text-decoration-none">
-                                                      {{{title.rendered}}}
-                                                </a>
-                                          </h1>
-
-                                          <amp-timeago
-                                                layout="fixed"
-                                                width="200"
-                                                height="20"
-                                                datetime="{{date}}"
-                                                locale="es"
-                                                class="caps"
-                                                style="color:#f5f5f5;font-size: 10px;text-shadow: 1px 1px 2px #000;"
-                                          >
-                                          </amp-timeago>
-                                    </div>
-                              </template>
-                        </amp-list>
-
-                        <h1 class="mb1 h3" style="color: #616161;">
+                        <!-- <h1 class="mb1 h3" style="color: #616161;">
                               🌎 Al Momento
-                        </h1>
+                        </h1> -->
 
                         <amp-list 
                               width="auto"
                               items="." 
-                              height="100"
+                              height="500"
                               layout="fixed-height"
-                              src="https://lineadirectaportal.com/wp-json/wp/v2/posts/?orderBy=date&order=desc&page=1&per_page=50&offset=1"
+                              src="https://lineadirectaportal.com/wp-json/wp/v2/posts?categories=<?php echo $var_id; ?>&orderBy=date&order=desc&page=1&per_page=50"
                         >
                         <template type="amp-mustache">
                               <div id="flex-container">
                                     <div class="flex-item" style="width:25%;">
                                           <a href="./single.php?id={{id}}">
-                                                <amp-img src="{{better_featured_image.media_details.sizes.medium.source_url}}" width="450" height="400" layout="responsive" alt="{{{title.rendered}}}" class="rounded mb4"></amp-img>
+                                                <amp-img src="{{better_featured_image.media_details.sizes.medium.source_url}}" width="450" height="400" layout="responsive" alt="{{title.rendered}}" class="rounded mb4"></amp-img>
                                           </a>
                                     </div>
                                     <div class="flex-item" style="width:75%;padding-left: 30px;">

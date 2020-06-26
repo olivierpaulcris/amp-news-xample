@@ -89,7 +89,7 @@
                   }
             ?>
 
-            <amp-list width="auto" single-item items="." height="600" layout="fixed-height"
+<amp-list width="auto" single-item items="." height="600" layout="fixed-height"
                   src="https://lineadirectaportal.com/wp-json/wp/v2/posts/<?php echo $var_id; ?>">
                   <template type="amp-mustache">
                         <article class="recipe-article">
