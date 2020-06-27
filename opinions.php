@@ -85,6 +85,39 @@
                   <ul class="list-reset m0 p0 pt4 ampstart-label">
                   
                         <li class="ampstart-nav-item ">
+                              <a class="ampstart-nav-link" href="index.php">Inicio</a>
+                        </li>
+                        <li class="ampstart-nav-item ">
+                              <a class="ampstart-nav-link" href="cats.php?id=8">Deportes</a>
+                        </li>
+                        <li class="ampstart-nav-item ">
+                              <a class="ampstart-nav-link" href="cats.php?id=3">Policiaca</a>
+                        </li>
+                        <li class="ampstart-nav-item ">
+                              <a class="ampstart-nav-link" href="cats.php?id=2">Sinaloa</a>
+                        </li>
+                        <li class="ampstart-nav-item ">
+                              <a class="ampstart-nav-link" href="opinions.php">Columnas</a>
+                        </li>
+                        <li class="ampstart-nav-item ">
+                              <a class="ampstart-nav-link" href="cats.php?id=1741">Agropecuaria</a>
+                        </li>
+
+                  </ul>
+            </nav>
+
+      </amp-sidebar>
+
+      <amp-sidebar id="header-sidebar" class="ampstart-sidebar px3  " layout="nodisplay">
+
+            <div class="flex justify-start items-center ampstart-sidebar-header">
+                  <div role="button" aria-label="close sidebar" on="tap:header-sidebar.toggle" tabindex="0" class="ampstart-navbar-trigger items-start">✕</div>
+            </div>
+
+            <nav class="ampstart-sidebar-nav ampstart-nav">
+                  <ul class="list-reset m0 p0 pt4 ampstart-label">
+                  
+                        <li class="ampstart-nav-item ">
                               <a class="ampstart-nav-link" href="index.php">📰 Inicio</a>
                         </li>
                         <li class="ampstart-nav-item ">
@@ -107,36 +140,19 @@
             </nav>
 
       </amp-sidebar>
+
+      
+      <?php 
+            if($_GET['id']) {
+                  $var_id = $_GET['id']; 
+            }
+      ?>
       
       <main id="content" role="main" class="">
                   <div class="clearfix py2 my2 px3">
 
-                  <?php 
-                        if($_GET['id']) {
-                              $var_id = $_GET['id']; 
-                              $cat = "Sin Categoría";
-
-                              $cats = array(
-                                    "2" => "Sinaloa",
-                                    "3" => "Policiaca",
-                                    "8" => "Deportes",
-                                    "1741" => "Agropecuaria",
-                              );
-
-                              $cats_emojis = array(
-                                    "2" => "🍅",
-                                    "3" => "🚨",
-                                    "8" => "⚽",
-                                    "1741" => "🌾",
-                              );
-
-                              $cat = $cats[$var_id];
-                              $cat_emoji = $cats_emojis[$var_id];
-                        }
-                  ?>
-
-                        <h1 class="mb1 mt2 h3" style="color: #616161;">
-                              <?php echo $cat_emoji; ?> <?php echo $cat; ?>
+                        <h1 class="mb1 h3" style="color: #616161;">
+                              💬 Columnas
                         </h1>
 
                         <amp-list 
@@ -144,7 +160,7 @@
                               items="." 
                               height="500"
                               layout="fixed-height"
-                              src="https://lineadirectaportal.com/wp-json/wp/v2/posts?categories=<?php echo $var_id; ?>&orderBy=date&order=desc&page=1&per_page=50"
+                              src="https://lineadirectaportal.com/wp-json/wp/v2/opinion_post-type?orderBy=date&order=desc&page=1&per_page=50"
                         >
                         <template type="amp-mustache">
                               <div id="flex-container">
@@ -154,7 +170,7 @@
                                           </a>
                                     </div>
                                     <div class="flex-item" style="width:75%;padding-left: 30px;">
-                                          <p class="caps" style="color: #FF550D; font-size: 12px;"><?php echo $cat; ?></p>
+                                          <p class="caps" style="color: #FF550D; font-size: 12px;">Columnas</p>
 
                                           <h1 class="mb1 h3">
                                                 <a href="./single.php?id={{id}}" class="text-decoration-none">
