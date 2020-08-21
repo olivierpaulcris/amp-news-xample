@@ -85,22 +85,22 @@
                   <ul class="list-reset m0 p0 pt4 ampstart-label">
                   
                         <li class="ampstart-nav-item ">
-                              <a class="ampstart-nav-link" href="index.php">Inicio</a>
+                              <a class="ampstart-nav-link" href="index.php">📰 Inicio</a>
                         </li>
                         <li class="ampstart-nav-item ">
-                              <a class="ampstart-nav-link" href="cats.php?id=8">Deportes</a>
+                              <a class="ampstart-nav-link" href="cats.php?id=8">⚽ Deportes</a>
                         </li>
                         <li class="ampstart-nav-item ">
-                              <a class="ampstart-nav-link" href="cats.php?id=3">Policiaca</a>
+                              <a class="ampstart-nav-link" href="cats.php?id=3">🚨 Policiaca</a>
                         </li>
                         <li class="ampstart-nav-item ">
-                              <a class="ampstart-nav-link" href="cats.php?id=2">Sinaloa</a>
+                              <a class="ampstart-nav-link" href="cats.php?id=2">🍅 Sinaloa</a>
                         </li>
                         <li class="ampstart-nav-item ">
-                              <a class="ampstart-nav-link" href="opinions.php">Columnas</a>
+                              <a class="ampstart-nav-link" href="opinions.php">💬 Columnas</a>
                         </li>
                         <li class="ampstart-nav-item ">
-                              <a class="ampstart-nav-link" href="cats.php?id=1741">Agropecuaria</a>
+                              <a class="ampstart-nav-link" href="cats.php?id=1741">🌾 Agropecuaria</a>
                         </li>
 
                   </ul>
