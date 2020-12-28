@@ -1,2 +1,2 @@
-# amp-news-xample
-News website using AMP and Google Analytics.
+# amp-ga-boilerplate
+AMP and GA boilerplate.
